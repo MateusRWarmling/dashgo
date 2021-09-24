@@ -16,7 +16,7 @@ const signInFormSchema = yup.object().shape({
 
 export default function SignIn() {
   const { register, handleSubmit, formState } = useForm({
-    resolver: yupResolver(signInFormSchema)
+    resolver: yupResolver<yup.AnyObjectSchema>(signInFormSchema)
   });
   
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
